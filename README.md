@@ -16,25 +16,23 @@ The look is the game's: its palette, the Tiny5 pixel font (Google Fonts) for hea
 
 | Placeholder | Where | Replace with |
 |---|---|---|
-| `SUPPORT_EMAIL` | `support.html`, `delete-account.html`, `privacy.html` (via the policy) | The monitored support address |
 | `PLAY_URL` | `index.html` | `https://play.google.com/store/apps/details?id=com.bitemarksinteractive.trashmob`, once the store page is public. Then change the button's text from "Coming soon to Google Play" to "Get it on Google Play" and remove `aria-disabled`. |
-| `SITE_URL` | Only in the M13 policy | This site's address, e.g. `https://bitemarks-interactive.github.io` |
 | `EFFECTIVE_DATE` | Only in the M13 policy | The date the M13 policy takes effect |
 
-For the email in `support.html` and `delete-account.html`, a find-and-replace of `SUPPORT_EMAIL` is enough. For the policy, rebuild it with `--set` (next section).
+The support email (bitemarksinteractive@gmail.com) and the site address are already filled in, in the game repo's policies too.
 
 ## The privacy policy
 
 The source is in the game repo: `TrashMob-git/docs/privacy-policy.html` (current) and `docs/privacy-policy-m13.html` (cloud saves and purchases, not published yet). `tools/wrap-policy.py` takes a policy's `<main>`, drops its comments, fills in placeholders and wraps it in this site's header and footer as `privacy.html`. Change the policy in the game repo first, then rebuild:
 
 ```bash
-python tools/wrap-policy.py ../TrashMob-git/docs/privacy-policy.html --set=SUPPORT_EMAIL=you@example.com
+python tools/wrap-policy.py ../TrashMob-git/docs/privacy-policy.html
 ```
 
 When M13 ships (cloud saves, Google account linking, purchases):
 
 ```bash
-python tools/wrap-policy.py ../TrashMob-git/docs/privacy-policy-m13.html --set=EFFECTIVE_DATE="1 March 2027" --set=SUPPORT_EMAIL=you@example.com --set=SITE_URL=https://bitemarks-interactive.github.io
+python tools/wrap-policy.py ../TrashMob-git/docs/privacy-policy-m13.html --set=EFFECTIVE_DATE="1 March 2027"
 ```
 
 Then on `delete-account.html`, remove the "Takes effect when cloud saves ship" badge and replace the "Right now" panel. The game repo's `docs/play-console-answers.md` lists everything else to change in Play Console at M13.
@@ -61,12 +59,12 @@ These steps need your GitHub login, so only you can do them.
    git push -u origin main
    ```
 4. **Turn on Pages:** the repo → **Settings → Pages** → Source **Deploy from a branch** → Branch `main`, folder `/ (root)` → **Save**. A minute later the site is live at `https://<name>.github.io`. Tick **Enforce HTTPS** if it isn't already.
-5. **Support email.** Pick an address you'll actually check, since Play shows it publicly and players will write to it. Options: a free Gmail just for this (e.g. `bitemarks.support@gmail.com`), or an address on your own domain (step 6) forwarded to your inbox. Then fill in `SUPPORT_EMAIL` (above) and push.
+5. **Support email.** Pick an address you'll actually check, since Play shows it publicly and players will write to it. Options: a free Gmail just for this (e.g. `bitemarks.support@gmail.com`), or an address on your own domain (step 6) forwarded to your inbox. (Done: bitemarksinteractive@gmail.com.)
 6. **Custom domain (optional).** If you buy one (e.g. `bitemarks.games`): **Settings → Pages → Custom domain**, enter it, and at your registrar add the DNS records GitHub shows (four `A` records for the apex, or a `CNAME` to `<name>.github.io` for `www`). Verify the domain under your organization's **Settings → Pages** so nobody else can claim it. Wait for the certificate, then tick **Enforce HTTPS**. The Play Console URLs then use the new domain.
 7. **Play Console:** paste the URLs:
-   - **Store settings → Store listing contact details:** Email `SUPPORT_EMAIL`, Website `SITE_URL`.
-   - **App content → Privacy policy:** `SITE_URL/privacy.html`.
-   - **App content → Data safety → Delete account URL** (only once cloud saves ship): `SITE_URL/delete-account.html`.
+   - **Store settings → Store listing contact details:** Email `bitemarksinteractive@gmail.com`, Website `https://bitemarks-interactive.github.io`.
+   - **App content → Privacy policy:** `https://bitemarks-interactive.github.io/privacy.html`.
+   - **App content → Data safety → Delete account URL** (only once cloud saves ship): `https://bitemarks-interactive.github.io/delete-account.html`.
 
 ## Updating screenshots
 
