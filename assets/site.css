@@ -1,0 +1,101 @@
+/* Bitemarks Interactive: the site in Trash Mob's look (the game's palette, the Tiny5 pixel font for
+   headings and buttons, notched panels, bevelled buttons, faint scanlines). Long text stays in a
+   readable sans-serif. Dark only, like the game. */
+:root {
+  --void: #0e0e12;
+  --dusk: #6c546c;
+  --shadow: #604854;
+  --green: #90a860;
+  --dim: #4f6742;
+  --bone: #e8dcc4;
+  --muted: #b9ad97; /* secondary text, 4.5:1+ on void */
+  --pixel: "Tiny5", ui-monospace, monospace;
+  --text: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--void); }
+body {
+  margin: 0; color: var(--bone); font: 17px/1.6 var(--text);
+  background-color: var(--void);
+  background-image: repeating-linear-gradient(to bottom, rgba(232, 220, 196, 0.03) 0 1px, transparent 1px 3px);
+}
+a { color: var(--green); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--bone); outline-offset: 3px; }
+img { image-rendering: pixelated; max-width: 100%; height: auto; display: block; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+/* Header and footer */
+.site-header { border-bottom: 2px solid var(--dusk); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+.brand { font: 20px/1 var(--pixel); letter-spacing: 1px; text-transform: uppercase; color: var(--bone); text-decoration: none; }
+.brand span { color: var(--green); }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0 16px; margin: 0; padding: 0; }
+nav li { margin: 0; }
+nav a { font: 15px/44px var(--pixel); text-transform: uppercase; letter-spacing: 1px; text-decoration: none; color: var(--muted); display: inline-block; min-height: 44px; }
+nav a:hover, nav a[aria-current="page"] { color: var(--bone); }
+nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+.site-footer { border-top: 2px solid var(--dusk); margin-top: 64px; padding: 24px 0 40px; color: var(--muted); font-size: 15px; }
+.site-footer a { color: var(--muted); }
+
+/* Headings: pixel, uppercase, with a rule (the game's section titles) */
+h1, h2, h3 { font-family: var(--pixel); font-weight: 400; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; }
+h1 { font-size: 34px; margin: 40px 0 8px; }
+h2 { font-size: 22px; color: var(--green); margin: 40px 0 12px; display: flex; align-items: center; gap: 12px; }
+h2::after { content: ""; flex: 1; border-top: 2px solid var(--dusk); }
+h3 { font-size: 18px; margin: 24px 0 8px; }
+p, li { margin: 0 0 12px; }
+.lede { font-size: 19px; color: var(--bone); }
+.muted { color: var(--muted); }
+
+/* Panels: void with a dusk outline, notched corners and an inner pixel line */
+.panel {
+  position: relative; background: var(--void); padding: 20px; margin: 16px 0;
+  border: 2px solid var(--dusk);
+  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  box-shadow: inset 0 0 0 4px var(--void), inset 0 0 0 5px rgba(108, 84, 108, 0.6);
+}
+.panel.note { border-color: var(--green); }
+
+/* Buttons: chunky, bevelled, press down */
+.btn {
+  display: inline-block; min-height: 48px; padding: 12px 22px; font: 18px/24px var(--pixel); text-transform: uppercase; letter-spacing: 1px;
+  color: var(--void); background: var(--green); text-decoration: none; border: 0;
+  box-shadow: inset -3px -3px 0 var(--dim), inset 3px 3px 0 #b8cc8c, 0 4px 0 var(--dim);
+}
+.btn:active { transform: translateY(3px); box-shadow: inset -3px -3px 0 var(--dim), inset 3px 3px 0 #b8cc8c, 0 1px 0 var(--dim); }
+.btn.secondary { background: var(--dusk); color: var(--bone); box-shadow: inset -3px -3px 0 var(--shadow), inset 3px 3px 0 #8a6f8a, 0 4px 0 var(--shadow); }
+.btn[aria-disabled="true"] { opacity: 0.75; cursor: default; }
+
+/* The game on the home page */
+.hero { display: grid; grid-template-columns: 112px 1fr; gap: 20px; align-items: center; margin-top: 32px; }
+.hero img { width: 112px; height: 112px; border: 2px solid var(--dusk); }
+.hero h1 { margin: 0 0 6px; }
+.feature { margin: 24px 0; border: 2px solid var(--dusk); }
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; padding: 0; list-style: none; }
+.shots img { border: 2px solid var(--dusk); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0; list-style: none; }
+.facts li { margin: 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+
+/* Legal pages */
+table { border-collapse: collapse; width: 100%; margin: 8px 0 16px; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--dusk); padding: 8px 8px 8px 0; }
+th { color: var(--green); font-weight: 600; }
+.badge { display: inline-block; font: 14px/1 var(--pixel); text-transform: uppercase; letter-spacing: 1px; padding: 6px 10px; border: 2px solid var(--green); color: var(--green); margin: 0 0 12px; }
+ol.steps { padding-left: 22px; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 28px; }
+  .hero { grid-template-columns: 80px 1fr; }
+  .hero img { width: 80px; height: 80px; }
+  .shots { grid-template-columns: repeat(2, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:active { transform: none; }
+}
+
+/* The policy pages' own bits (from the game repo's docs/ copies) */
+.legal .meta { color: var(--muted); margin-bottom: 24px; }
+.legal .summary { border-left: 4px solid var(--dusk); padding: 4px 0 4px 16px; }
+.legal h1 { margin-top: 40px; }
