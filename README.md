@@ -66,6 +66,19 @@ These steps need your GitHub login, so only you can do them.
    - **App content → Privacy policy:** `https://bitemarks-interactive.github.io/privacy.html`.
    - **App content → Data safety → Delete account URL** (only once cloud saves ship): `https://bitemarks-interactive.github.io/delete-account.html`.
 
+## Moving to Bitemarks Interactive's own domain
+
+Planned: the site moves from `bitemarks-interactive.github.io` to the studio's own domain, so AdMob's `app-ads.txt` (M13's rewarded ads, `TrashMob-git/docs/m13-ads.md`) can sit at the domain's root. The repo and GitHub Pages stay as they are; only the address changes. GitHub keeps redirecting the old github.io address to the new one, so links already handed out keep working.
+
+1. **Point the domain at GitHub Pages** (owner, at the registrar):
+   - Apex (`bitemarks.example`): four `A` records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and four `AAAA` records to `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`. Add a `CNAME` for `www` → `bitemarks-interactive.github.io` so both work.
+   - Check GitHub's current list first: [Managing a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+2. **Verify the domain** (owner): the organization → **Settings → Pages → Add a domain**, then the `TXT` record GitHub shows, so nobody else's Pages site can claim it.
+3. **Switch the site** (Claude can do this once you send the domain): `python tools/set-domain.py bitemarks.example` writes `CNAME` and changes every `https://bitemarks-interactive.github.io` to the new address, here and in the game repo's docs. Commit and push both repos.
+4. **HTTPS** (owner): the repo → **Settings → Pages**: wait for the certificate (minutes to a day), then tick **Enforce HTTPS**.
+5. **Play Console** (owner): update the store listing's **Website** and the **Privacy policy** URL (and at M13 the **Delete account URL**) to the new domain.
+6. **At M13:** add `app-ads.txt` at the site root with the AdMob line (`google.com, pub-…, DIRECT, f08c47fec0942fa0`). The store listing's Website must already be the new domain when AdMob crawls; check its app-ads.txt status after the first crawl.
+
 ## Updating screenshots
 
 The six screenshots in `assets/screenshots/` are the store ones halved to 540×960. When the 1.0 store screenshots are retaken (the game repo's `docs/play-release.md` launch checklist), copy them here too, halved with nearest-neighbour scaling so the pixels stay sharp.
