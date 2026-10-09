@@ -19,7 +19,7 @@ The look is the game's: its palette, the Tiny5 pixel font (Google Fonts) for hea
 | `PLAY_URL` | `index.html` | `https://play.google.com/store/apps/details?id=com.bitemarksinteractive.trashmob`, once the store page is public. Then change the button's text from "Coming soon to Google Play" to "Get it on Google Play" and remove `aria-disabled`. |
 | `EFFECTIVE_DATE` | Only in the M13 policy | The date the M13 policy takes effect |
 
-The support email (bitemarksinteractive@gmail.com) and the site address are already filled in, in the game repo's policies too.
+The support email (support@bitemarksinteractive.com) and the site address are already filled in, in the game repo's policies too.
 
 ## The privacy policy
 
@@ -59,10 +59,10 @@ These steps need your GitHub login, so only you can do them.
    git push -u origin main
    ```
 4. **Turn on Pages:** the repo → **Settings → Pages** → Source **Deploy from a branch** → Branch `main`, folder `/ (root)` → **Save**. A minute later the site is live at `https://<name>.github.io`. Tick **Enforce HTTPS** if it isn't already.
-5. **Support email.** Pick an address you'll actually check, since Play shows it publicly and players will write to it. Options: a free Gmail just for this (e.g. `bitemarks.support@gmail.com`), or an address on your own domain (step 6) forwarded to your inbox. (Done: bitemarksinteractive@gmail.com.)
+5. **Support email.** Pick an address you'll actually check, since Play shows it publicly and players will write to it. Options: a free Gmail just for this (e.g. `bitemarks.support@gmail.com`), or an address on your own domain (step 6) forwarded to your inbox. (Done: support@bitemarksinteractive.com.)
 6. **Custom domain (optional).** If you buy one (e.g. `bitemarks.games`): **Settings → Pages → Custom domain**, enter it, and at your registrar add the DNS records GitHub shows (four `A` records for the apex, or a `CNAME` to `<name>.github.io` for `www`). Verify the domain under your organization's **Settings → Pages** so nobody else can claim it. Wait for the certificate, then tick **Enforce HTTPS**. The Play Console URLs then use the new domain.
 7. **Play Console:** paste the URLs:
-   - **Store settings → Store listing contact details:** Email `bitemarksinteractive@gmail.com`, Website `https://bitemarks-interactive.github.io`.
+   - **Store settings → Store listing contact details:** Email `support@bitemarksinteractive.com`, Website `https://bitemarks-interactive.github.io`.
    - **App content → Privacy policy:** `https://bitemarks-interactive.github.io/privacy.html`.
    - **App content → Data safety → Delete account URL** (only once cloud saves ship): `https://bitemarks-interactive.github.io/delete-account.html`.
 
