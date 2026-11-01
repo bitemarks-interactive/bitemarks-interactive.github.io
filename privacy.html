@@ -18,6 +18,7 @@
     <nav aria-label="Site">
       <ul>
         <li><a href="./">Trash Mob</a></li>
+        <li><a href="trashmob/wiki/">Wiki</a></li>
         <li><a href="support.html">Support</a></li>
         <li><a href="privacy.html" aria-current="page">Privacy</a></li>
         <li><a href="delete-account.html">Delete data</a></li>
@@ -28,39 +29,85 @@
 
 <main class="wrap legal">
 <h1>Trash Mob Privacy Policy</h1>
-<p class="meta">Bitemarks Interactive · Effective 9 October 2026 · Applies to Trash Mob 0.9 and later, until cloud saves ship</p>
+<p class="meta">Bitemarks Interactive · Effective 31 October 2026</p>
 
-<p class="summary">Short version: Trash Mob doesn't collect, store or share any of your personal data. Your game save lives on your phone. Notifications are scheduled on your phone. Nothing is sent to us or to anyone else.</p>
+<p class="summary">Short version: to keep your save in the cloud, Trash Mob gives you an anonymous player ID. If you back up, your save goes to the cloud; to move it to a new phone, the game gives you a one-time code. If you buy something, the purchase is recorded so it can be restored. Ads are optional: only if you switch on the in-game TV does Google's ad service run, and then it collects what it needs to show ads. No analytics, nothing sold, and you can delete it all.</p>
 
-<h2>What the app collects</h2>
-<p>Nothing. Trash Mob has no accounts, no sign-in, no ads, no analytics, no crash reporting and no in-app purchases. It doesn't send your game progress, device identifiers or any other information to us or to anyone else, and it doesn't use your phone's advertising ID.</p>
+<h2>Who we are</h2>
+<p>Trash Mob is made by Bitemarks Interactive. Contact: <a href="mailto:support@bitemarksinteractive.com">support@bitemarksinteractive.com</a>.</p>
 
-<h2>Your game save</h2>
-<p>Your progress is saved in the app's private storage on your device. We can't see it. Uninstalling the app or clearing its data deletes it.</p>
-<p>If you've turned on Android's backup (for example Google One backup, or moving data to a new phone), Android may include the app's save in that backup. That backup is handled by Google or your device maker under your own account and settings; we don't receive it and can't access it.</p>
-<p>Some things in the game happen once a day by your phone's clock. The game reads the clock on your phone; the time never leaves your device.</p>
+<h2>What we collect, and why</h2>
+<table>
+  <tr><th>What</th><th>When</th><th>Why</th></tr>
+  <tr><td>An anonymous player ID, created by Firebase Authentication</td><td>When cloud saves turn on (the first time you open a version with cloud saves)</td><td>To store your cloud save and link your purchases to you, without asking who you are</td></tr>
+    <tr><td>Your cloud saves: your game progress, your save slots' names, and when they were saved</td><td>When you tap Back up now, or automatically every day and when you close the game if you turn on automatic backups (Settings → Cloud saves)</td><td>To keep your progress safe and to move it to a new phone</td></tr>
+  <tr><td>When you last played (one date and time, updated at most once a day)</td><td>Each day you open the game, unless you turn off Count me on the sign in Settings</td><td>To count how many people played in the last 30 days, for the population sign on the Street. Turning the switch off deletes the date we hold</td></tr>
+  <tr><td>A one-time move code</td><td>Only when you ask for one; it expires after a day or when used</td><td>To copy your cloud saves to your new phone</td></tr>
+  <tr><td>Purchase history: what you bought, when, the price and currency, and Google Play's purchase token</td><td>Only when you buy something</td><td>To deliver it, restore it on a new device, and handle refunds</td></tr>
+  <tr><td>Redeem codes you enter, with your player ID</td><td>Only when you redeem a code</td><td>To check the code and give you its reward once</td></tr>
+  <tr><td>Collected by Google's ad service (AdMob), not by us: your device's advertising ID and app set ID, your IP address (which can show your rough location), how you interact with ads, and diagnostic information about the app and the ad service</td><td>Only after you turn on the TV in the Hideout, and only while it's on</td><td>To show the optional ads you choose to watch, measure them, and prevent ad fraud</td></tr>
+</table>
+<p>Like any internet service, our providers' servers receive your device's IP address when the app connects, and use it to deliver the service and keep it secure. We don't use it to identify or track you.</p>
+<p>We don't collect your location, contacts, photos, files, messages, browsing history or payment card details. Payments are handled by Google Play; we never see your card.</p>
 
-<h2>Notifications</h2>
-<p>The game can remind you when your idle progress has hit its limit. These reminders are local notifications: the app schedules them on your device, and no server is involved. You can turn them off at any time in Android's settings for the app.</p>
-
-<h2>Permissions</h2>
+<h2>Optional ads</h2>
+<p>Trash Mob shows ads only when you ask for one: a busted TV in the Hideout plays short video ads ("infomercials"), and you can watch one for an in-game bonus. There are no banners and no ads you didn't choose. The TV is off until you turn it on, and until then the ad service isn't started and nothing is sent to it. Where no consent form applies, turning the TV on is your agreement to see ads, which are personalized only as described below.</p>
 <ul>
-  <li><strong>Notifications</strong>: to show the reminder above. Optional; the game works without it.</li>
-  <li><strong>Run at startup</strong> and <strong>prevent phone from sleeping</strong>: used by the notification system to keep a scheduled reminder after your phone restarts and to deliver it on time.</li>
-  <li><strong>Network access</strong>: included by the app framework. The game doesn't use it to send anything.</li>
+  <li><strong>Consent:</strong> in the European Economic Area, the UK and Switzerland, you'll be asked for consent (through Google's consent form) when you turn the TV on. You can change your choice any time in Settings → Ad privacy choices.</li>
+  <li><strong>Personalized ads only for adults who agree:</strong> the TV shows personalized ads only to players Google Play confirms are 18 or over, and only with their consent. Everyone else, including anyone whose age we don't know, gets non-personalized ads (ads that aren't based on your interests or activity in other apps). All ads are limited to content suitable for teens, and gambling ads are blocked.</li>
+  <li><strong>Turning it off:</strong> turn the TV off in the Hideout or in Settings, and the ad service won't be started again. You can also reset or delete your advertising ID in Android's settings (Settings → Privacy → Ads).</li>
+  <li>Buying the Supporter Pack gives you the TV's bonuses without watching ads and doesn't start the ad service.</li>
 </ul>
 
-<h2>Children</h2>
-<p>Trash Mob is not directed at children under 13. Because the app collects no personal information from anyone, it collects none from children either.</p>
+<h2>What we don't do</h2>
+<ul>
+  <li>No ads you didn't ask for, and nothing from the ad service unless you turn the TV on.</li>
+  <li>No analytics and no tracking of you by us, in this app or across other apps or websites. The date you last played is used only for the population sign's count.</li>
+  <li><strong>The population sign:</strong> the town's sign shows how many players were active in the last 30 days. We count that on our server from the date each anonymous player last played; only the total is ever shown or shared, never anything about you. You can leave yourself out: Settings → Count me on the sign.</li>
+  <li>We don't sell your data. The only data shared for advertising is what Google's ad service collects itself while the TV is on, as described above.</li>
+</ul>
+
+<h2>Who processes it for us</h2>
+<p>We use these services to run cloud saves and purchases. They process data on our behalf, under their own privacy and security terms:</p>
+<ul>
+  <li><strong>Google Firebase</strong> (Authentication, cloud save storage, and the server that checks redeem codes): <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></li>
+  <li><strong>Google Play Billing</strong> (payments): <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+  <li><strong>RevenueCat</strong> (keeps track of your purchases so they can be restored): <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></li>
+</ul>
+<p>Google's ad service (Google Mobile Ads / AdMob) collects and uses data under Google's own policies when the TV is on: <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from apps that use its services</a> and <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
+<p>These services may store data on servers in the United States and other countries.</p>
+
+<h2>How long we keep it</h2>
+<ul>
+  <li><strong>Your player ID, cloud saves and last-played date:</strong> for as long as you keep playing.  If an account with no purchases isn't used for 24 months, we delete it.</li>
+  <li><strong>Move codes:</strong> until used, or a day.</li>
+  <li><strong>Purchase history:</strong> as long as needed to restore your purchases and handle refunds, and as long as tax and accounting law requires us to keep records of sales, even after you delete your account.</li>
+  <li><strong>Data Google's ad service collects:</strong> kept by Google under its own retention policies; we don't receive it in a form that identifies you.</li>
+  <li><strong>After you ask us to delete your data:</strong> within 30 days, except the purchase records the law requires us to keep.</li>
+</ul>
 
 <h2>Deleting your data</h2>
-<p>There's nothing on our side to delete: everything lives on your device. Uninstall the app, or clear its storage in Android's settings, and your save is gone.</p>
+<p>You can delete your account and cloud save at any time:</p>
+<ul>
+  <li><strong>In the game:</strong> Settings → Cloud saves → Delete my cloud data.</li>
+  <li><strong>On the web, without the app:</strong> follow the steps at <a href="https://bitemarksinteractive.com/delete-account.html">https://bitemarksinteractive.com/delete-account.html</a>.</li>
+</ul>
+<p>Deleting removes your cloud saves, your profile, the codes you redeemed, the date you last played and your anonymous player ID. The save on your phone stays until you uninstall the app or clear its data.</p>
+
+<h2>Your rights</h2>
+<p>You can ask us for a copy of your data, to correct it or to delete it, by writing to <a href="mailto:support@bitemarksinteractive.com">support@bitemarksinteractive.com</a>. Your data is tied to an anonymous player ID rather than your name, so the fastest route is the in-game button (Settings → Cloud saves → Delete my cloud data); for anything else, write to us and we'll do what we can. Depending on where you live, you may have further rights under laws such as the GDPR or the CCPA; we honor them for everyone.</p>
+
+<h2>Children</h2>
+<p>Trash Mob is not directed at children under 13, and we don't knowingly collect personal information from them. Ads are never directed at children, and only players Google Play confirms as adults can get personalized ads (see Optional ads). If you believe a child under 13 has backed up a save or made a purchase, write to us and we'll delete the data.</p>
+
+<h2>Security</h2>
+<p>Data travels to our providers encrypted (HTTPS) and is stored on their secured infrastructure. Only the player who owns a cloud save can read it.</p>
 
 <h2>Changes</h2>
-<p>When we add features that handle data, such as cloud saves or in-app purchases, we'll update this policy before those features ship and change the date above.</p>
+<p>If we change what we collect, we'll update this policy before the change ships, change the date above, and say so in the game.</p>
 
 <h2>Contact</h2>
-<p>Questions about this policy: <a href="mailto:support@bitemarksinteractive.com">support@bitemarksinteractive.com</a></p>
+<p><a href="mailto:support@bitemarksinteractive.com">support@bitemarksinteractive.com</a></p>
 </main>
 
 <footer class="site-footer">

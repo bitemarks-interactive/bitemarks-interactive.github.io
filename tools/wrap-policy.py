@@ -26,7 +26,7 @@ page = f"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trash Mob Privacy Policy · Bitemarks Interactive</title>
-<meta name="description" content="What Trash Mob collects (nothing, for now), and how to reach us.">
+<meta name="description" content="What Trash Mob collects (an anonymous player ID, your cloud saves, purchases, and ads only if you turn them on), and how to reach us.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +40,7 @@ page = f"""<!doctype html>
     <nav aria-label="Site">
       <ul>
         <li><a href="./">Trash Mob</a></li>
+        <li><a href="trashmob/wiki/">Wiki</a></li>
         <li><a href="support.html">Support</a></li>
         <li><a href="privacy.html" aria-current="page">Privacy</a></li>
         <li><a href="delete-account.html">Delete data</a></li>

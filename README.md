@@ -4,10 +4,12 @@ The public site for Bitemarks Interactive and Trash Mob: the game's home page, i
 
 | Page | What it's for |
 |---|---|
-| `index.html` | Trash Mob: icon, feature graphic, description, six screenshots, the Play button |
+| `index.html` | Trash Mob: icon, feature graphic, description, six screenshots (`assets/screenshots/`, from `npm run store-art` in the game repo), the Play button |
+| `trashmob/wiki/` | The Trash Mob wiki. **Generated, don't edit by hand**: `npm run wiki` in the game repo (it runs on every release) builds it from the game's data and the hand-written guides in `docs/wiki-guides/`, and refuses to write a page that carries a secret. The footer's Discord and Bitemarks Apparel links are in the game repo's `src/sim/wiki/links.json`. |
 | `privacy.html` | The privacy policy. **Generated, don't edit by hand** (see below). Play Console's privacy policy URL. |
 | `support.html` | Contact and FAQ. Play's store listing website/contact. |
 | `delete-account.html` | How to delete your data. Play Console's account deletion URL (needed once cloud saves ship). |
+| `app-ads.txt` | AdMob's line for this publisher (`pub-6181315152165090`). AdMob checks it on the domain set as the Play listing's Website. |
 | `404.html` | GitHub Pages' not-found page |
 
 The look is the game's: its palette, the Tiny5 pixel font (Google Fonts) for headings and buttons, notched panels, bevelled buttons (`assets/site.css`).
@@ -23,19 +25,19 @@ The support email (support@bitemarksinteractive.com) and the site address are al
 
 ## The privacy policy
 
-The source is in the game repo: `TrashMob-git/docs/privacy-policy.html` (current) and `docs/privacy-policy-m13.html` (cloud saves and purchases, not published yet). `tools/wrap-policy.py` takes a policy's `<main>`, drops its comments, fills in placeholders and wraps it in this site's header and footer as `privacy.html`. Change the policy in the game repo first, then rebuild:
+The source is in the game repo: `TrashMob-git/docs/privacy-policy-m13.html` (cloud saves, move codes, the population sign, purchases and the optional ads; this is what `privacy.html` is built from as of 2026-10-31, effective date 31 October 2026, published 1 November 2026) and the old `docs/privacy-policy.html` (the no-cloud 0.9 version, kept for history). `tools/wrap-policy.py` takes a policy's `<main>`, drops its comments, fills in placeholders and wraps it in this site's header and footer as `privacy.html`. Change the policy in the game repo first, then rebuild:
 
 ```bash
-python tools/wrap-policy.py ../TrashMob-git/docs/privacy-policy.html
+python tools/wrap-policy.py ../TrashMob-git/docs/privacy-policy-m13.html --set=EFFECTIVE_DATE="31 October 2026"
 ```
 
-When M13 ships (cloud saves, Google account linking, purchases):
+Done for 1.0 (cloud saves, move codes, purchases; no Google account linking). To change the effective date on the day you publish:
 
 ```bash
 python tools/wrap-policy.py ../TrashMob-git/docs/privacy-policy-m13.html --set=EFFECTIVE_DATE="1 March 2027"
 ```
 
-Then on `delete-account.html`, remove the "Takes effect when cloud saves ship" badge and replace the "Right now" panel. The game repo's `docs/play-console-answers.md` lists everything else to change in Play Console at M13.
+`delete-account.html` and `support.html` were updated for cloud saves on 2026-10-31 (no badge, the real steps). The game repo's `docs/play-console-answers.md` lists everything else to change in Play Console at M13.
 
 ## Preview locally
 
@@ -76,8 +78,8 @@ Done 2026-10-11: the site is at https://bitemarksinteractive.com (it was `bitema
 2. **Verify the domain** (owner): the organization → **Settings → Pages → Add a domain**, then the `TXT` record GitHub shows, so nobody else's Pages site can claim it.
 3. **Switch the site** (Claude can do this once you send the domain): `python tools/set-domain.py bitemarks.example` writes `CNAME` and changes every `https://bitemarksinteractive.com` to the new address, here and in the game repo's docs. Commit and push both repos.
 4. **HTTPS** (owner): the repo → **Settings → Pages**: wait for the certificate (minutes to a day), then tick **Enforce HTTPS**.
-5. **Play Console** (owner): update the store listing's **Website** and the **Privacy policy** URL (and at M13 the **Delete account URL**) to the new domain.
-6. **At M13:** add `app-ads.txt` at the site root with the AdMob line (`google.com, pub-…, DIRECT, f08c47fec0942fa0`). The store listing's Website must already be the new domain when AdMob crawls; check its app-ads.txt status after the first crawl.
+5. **Play Console** (owner): update the store listing's **Website** and the **Privacy policy** URL (and the **Delete account URL**) to the new domain.
+6. **Done 2026-11-01:** `app-ads.txt` is at the site root with the AdMob line (`google.com, pub-…, DIRECT, f08c47fec0942fa0`). The store listing's Website must already be the new domain when AdMob crawls; check its app-ads.txt status after the first crawl.
 
 ## Updating screenshots
 

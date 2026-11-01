@@ -1,0 +1,23 @@
+/* The wiki, on top of the site's own stylesheet (assets/site.css): the same palette and pixel headings, wider room for tables. */
+.wiki { max-width: 1080px; }
+.wiki-nav { border-bottom: 2px solid var(--dusk); }
+.wiki-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0 14px; margin: 0; padding: 0; }
+.wiki-nav a { font: 14px/44px var(--pixel); text-transform: uppercase; letter-spacing: 1px; text-decoration: none; color: var(--muted); display: inline-block; min-height: 44px; }
+.wiki-nav a:hover, .wiki-nav a[aria-current="page"] { color: var(--bone); }
+.wiki-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+.tablewrap { overflow-x: auto; margin: 8px 0 16px; }
+.tablewrap table { min-width: 560px; margin: 0; }
+table.jobs { min-width: 880px; }
+.odds { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.item h3, .panel h3 { margin-top: 0; }
+.item .badge { font-size: 12px; padding: 3px 6px; margin: 0 0 0 6px; vertical-align: middle; }
+.jump a { white-space: nowrap; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; padding: 0; list-style: none; }
+.cards li { margin: 0; }
+.cards a { display: block; text-decoration: none; color: var(--bone); }
+.cards strong { display: block; font: 18px/1.2 var(--pixel); text-transform: uppercase; letter-spacing: 1px; color: var(--green); }
+.guide h2:first-of-type { margin-top: 24px; }
+.guide blockquote { margin: 16px 0; padding: 4px 0 4px 16px; border-left: 4px solid var(--dusk); color: var(--muted); }
+.guide code { font-family: ui-monospace, monospace; background: rgba(108, 84, 108, 0.25); padding: 0 4px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; margin: 0 0 12px; list-style: none; }
+.footer-links li { margin: 0; }
