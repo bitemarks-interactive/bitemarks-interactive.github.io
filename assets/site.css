@@ -30,6 +30,20 @@ img { image-rendering: pixelated; max-width: 100%; height: auto; display: block;
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
 .brand { font: 20px/1 var(--pixel); letter-spacing: 1px; text-transform: uppercase; color: var(--bone); text-decoration: none; }
 .brand span { color: var(--green); }
+/* The Bitemarks logo (hand-drawn, not pixel art: drawn smooth). In the header it's the link home. */
+.brand img { height: 72px; width: auto; image-rendering: auto; margin: -6px 0; }
+.crumbs { margin: 24px 0 0; font: 14px/1.4 var(--pixel); text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.crumbs a { color: var(--muted); }
+.studio { margin: 32px 0 0; }
+.studio-logo { width: min(100%, 600px); margin: 0 auto; image-rendering: auto; }
+.studio-line { text-align: center; color: var(--muted); margin-top: 4px; }
+
+/* A game on the studio's home page: icon, name and line, the whole card one link */
+.game { display: grid; grid-template-columns: 112px 1fr; gap: 20px; align-items: center; text-decoration: none; color: var(--bone); }
+.game img { width: 112px; height: 112px; border: 2px solid var(--dusk); }
+.game:hover { border-color: var(--green); }
+.game-name { display: block; font: 26px/1.2 var(--pixel); text-transform: uppercase; letter-spacing: 1px; color: var(--green); margin-bottom: 6px; }
+.game-line { display: block; }
 nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0 16px; margin: 0; padding: 0; }
 nav li { margin: 0; }
 nav a { font: 15px/44px var(--pixel); text-transform: uppercase; letter-spacing: 1px; text-decoration: none; color: var(--muted); display: inline-block; min-height: 44px; }
@@ -68,7 +82,7 @@ p, li { margin: 0 0 12px; }
 .btn[aria-disabled="true"] { opacity: 0.75; cursor: default; }
 
 /* The game on the home page */
-.hero { display: grid; grid-template-columns: 112px 1fr; gap: 20px; align-items: center; margin-top: 32px; }
+.hero { display: grid; grid-template-columns: 112px 1fr; gap: 20px; align-items: center; margin-top: 16px; }
 .hero img { width: 112px; height: 112px; border: 2px solid var(--dusk); }
 .hero h1 { margin: 0 0 6px; }
 .feature { margin: 24px 0; border: 2px solid var(--dusk); }
@@ -89,6 +103,9 @@ ol.steps { padding-left: 22px; }
   h1 { font-size: 28px; }
   .hero { grid-template-columns: 80px 1fr; }
   .hero img { width: 80px; height: 80px; }
+  .brand img { height: 60px; }
+  .game { grid-template-columns: 80px 1fr; }
+  .game img { width: 80px; height: 80px; }
   .shots { grid-template-columns: repeat(2, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {

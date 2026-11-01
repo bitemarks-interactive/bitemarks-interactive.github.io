@@ -36,10 +36,10 @@ page = f"""<!doctype html>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./">Bitemarks <span>Interactive</span></a>
+    <a class="brand" href="./"><img src="assets/brand/bitemarks-logo-small.png" alt="Bitemarks Interactive" width="240" height="153"></a>
     <nav aria-label="Site">
       <ul>
-        <li><a href="./">Trash Mob</a></li>
+        <li><a href="trashmob/">Trash Mob</a></li>
         <li><a href="trashmob/wiki/">Wiki</a></li>
         <li><a href="support.html">Support</a></li>
         <li><a href="privacy.html" aria-current="page">Privacy</a></li>

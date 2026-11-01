@@ -4,7 +4,8 @@ The public site for Bitemarks Interactive and Trash Mob: the game's home page, i
 
 | Page | What it's for |
 |---|---|
-| `index.html` | Trash Mob: icon, feature graphic, description, six screenshots (`assets/screenshots/`, from `npm run store-art` in the game repo), the Play button |
+| `index.html` | Bitemarks Interactive, the studio: the logo (`assets/brand/`, cut from the owner's artwork with its transparency kept), the games, contact |
+| `trashmob/index.html` | Trash Mob: icon, feature graphic, description, six screenshots (`assets/screenshots/`, from `npm run store-art` in the game repo), the Play button |
 | `trashmob/wiki/` | The Trash Mob wiki. **Generated, don't edit by hand**: `npm run wiki` in the game repo (it runs on every release) builds it from the game's data and the hand-written guides in `docs/wiki-guides/`, and refuses to write a page that carries a secret. The footer's Discord and Bitemarks Apparel links are in the game repo's `src/sim/wiki/links.json`. |
 | `privacy.html` | The privacy policy. **Generated, don't edit by hand** (see below). Play Console's privacy policy URL. |
 | `support.html` | Contact and FAQ. Play's store listing website/contact. |
