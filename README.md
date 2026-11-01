@@ -19,7 +19,7 @@ The look is the game's: its palette, the Tiny5 pixel font (Google Fonts) for hea
 
 | Placeholder | Where | Replace with |
 |---|---|---|
-| `PLAY_URL` | `index.html` | `https://play.google.com/store/apps/details?id=com.bitemarksinteractive.trashmob`, once the store page is public. Then change the button's text from "Coming soon to Google Play" to "Get it on Google Play" and remove `aria-disabled`. |
+| `PLAY_URL` | `trashmob/index.html` | `https://play.google.com/store/apps/details?id=com.bitemarksinteractive.trashmob`, once the store page is public. Then change the button's text from "Coming soon to Google Play" to "Get it on Google Play" and remove `aria-disabled`. |
 | `EFFECTIVE_DATE` | Only in the M13 policy | The date the M13 policy takes effect |
 
 The support email (support@bitemarksinteractive.com) and the site address are already filled in, in the game repo's policies too.
